@@ -26,7 +26,7 @@ class Body extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: kPrimaryColor,
-              fontSize: 24,
+              fontSize: size.width / (size.width * 0.06),
               fontFamily: 'advent',
             ),
           ),
