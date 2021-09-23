@@ -16,9 +16,15 @@ class RoundedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    double fieldwidth;
+    if (size.width > 450) {
+      fieldwidth = 450;
+    } else {
+      fieldwidth = size.width * 0.8;
+    }
     return Container(
       margin: EdgeInsets.symmetric(vertical: 5),
-      width: size.width * 0.5,
+      width: fieldwidth,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
         child: FlatButton(
