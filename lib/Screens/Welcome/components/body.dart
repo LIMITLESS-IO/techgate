@@ -10,41 +10,43 @@ class Body extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     //provides total height and width of the screen
     return Background(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Spacer(),
-          Container(
-            width: size.width * 0.7,
-            child: Text(
-              "Welcome to Tech Gate JU ",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: kPrimaryColor,
-                fontSize: size.width / (size.width * 0.05),
-                fontFamily: 'advent',
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Spacer(),
+            Container(
+              width: size.width * 0.7,
+              child: Text(
+                "Welcome to Tech Gate JU ",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: kPrimaryColor,
+                  fontSize: size.width / (size.width * 0.05),
+                  fontFamily: 'advent',
+                ),
               ),
             ),
-          ),
-          Spacer(),
-          SvgPicture.asset(
-            "assets/icons/rise.svg",
-            height: size.height * 0.4,
-          ),
-          Spacer(),
-          RoundedButton(
-            text: "LOGIN",
-            press: () {},
-          ),
-          RoundedButton(
-            text: "SIGNUP",
-            press: () {},
-            color: kPrimaryLightColor,
-            textColor: Colors.black,
-          ),
-          Spacer(),
-        ],
+            Spacer(),
+            SvgPicture.asset(
+              "assets/icons/rise.svg",
+              height: size.height * 0.4,
+            ),
+            Spacer(),
+            RoundedButton(
+              text: "LOGIN",
+              press: () {},
+            ),
+            RoundedButton(
+              text: "SIGNUP",
+              press: () {},
+              color: kPrimaryLightColor,
+              textColor: Colors.black,
+            ),
+            Spacer(),
+          ],
+        ),
       ),
     );
   }
