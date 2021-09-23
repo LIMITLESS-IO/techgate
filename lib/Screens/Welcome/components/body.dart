@@ -12,28 +12,20 @@ class Body extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(
-            '''Welcome to Tech Gate JU
-            as you can see the site is still under development
-            it will be a platform where students can help each other learn about tech
-            and also a place to communicate with other geeks 
-            hoping that it'd make your college life memorable and benificial
-            until then, take care, and keep seeking knowledge
-
-
-
-
-            
-            ''',
-            textAlign: TextAlign.center,
-            maxLines: 15,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: kPrimaryColor,
-              fontSize: size.width / (size.width * 0.05),
-              fontFamily: 'advent',
+          Container(
+            width: size.width * 0.7,
+            child: Text(
+              "Welcome to Tech Gate JU ",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: kPrimaryColor,
+                fontSize: size.width / (size.width * 0.05),
+                fontFamily: 'advent',
+              ),
             ),
           ),
+          Spacer(),
           SvgPicture.asset(
             "assets/icons/rise.svg",
             height: size.height * 0.4,
