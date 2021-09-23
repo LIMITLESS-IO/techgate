@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:techgate/Screens/Login/login_screen.dart';
 import 'package:techgate/Screens/Welcome/components/background.dart';
 import 'package:techgate/components/roundedbutton.dart';
 import 'package:techgate/constants.dart';
@@ -14,7 +15,9 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Spacer(),
+            SizedBox(
+              height: size.height * 0.01,
+            ),
             Container(
               width: size.width * 0.7,
               child: Text(
@@ -28,15 +31,28 @@ class Body extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(),
+            SizedBox(
+              height: size.height * 0.15,
+            ),
             SvgPicture.asset(
               "assets/icons/rise.svg",
               height: size.height * 0.4,
             ),
-            Spacer(),
+            SizedBox(
+              height: size.height * 0.08,
+            ),
             RoundedButton(
               text: "LOGIN",
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return LoginScreen();
+                    },
+                  ),
+                );
+              },
             ),
             RoundedButton(
               text: "SIGNUP",
@@ -44,7 +60,6 @@ class Body extends StatelessWidget {
               color: kPrimaryLightColor,
               textColor: Colors.black,
             ),
-            Spacer(),
           ],
         ),
       ),
