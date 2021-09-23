@@ -11,6 +11,7 @@ class Background extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
+      color: Color(0Xffd0f0c0),
       height: size.height,
       width: size.width,
       child: Stack(
