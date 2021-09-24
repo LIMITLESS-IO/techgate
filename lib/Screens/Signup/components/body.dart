@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:techgate/Screens/Login/components/social_icon.dart';
+import 'package:techgate/Screens/Signup/components/social_icon.dart';
 import 'package:techgate/Screens/Login/login_screen.dart';
 import 'package:techgate/Screens/Signup/components/background.dart';
 import 'package:techgate/components/has_an_account.dart';

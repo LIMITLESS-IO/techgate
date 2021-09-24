@@ -55,6 +55,7 @@ class OrDriver extends StatelessWidget {
             ),
             child: Text(
               "OR",
+              textAlign: TextAlign.center,
               style: TextStyle(
                 color: kPrimaryColor,
                 fontWeight: FontWeight.w600,
