@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:techgate/Screens/Login/components/background.dart';
 import 'package:techgate/Screens/Signup/signup_screen.dart';
 import 'package:techgate/components/has_an_account.dart';
-import 'package:techgate/components/rounded_input_field.dart';
+import 'package:techgate/components/rounded_email_field.dart';
 import 'package:techgate/components/rounded_password_field.dart';
 import 'package:techgate/components/roundedbutton.dart';
 
@@ -31,7 +31,7 @@ class Body extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            RoundedInputField(
+            RoundedEmailField(
               hintText: "Your Email",
               onChanged: (value) {},
             ),

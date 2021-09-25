@@ -4,7 +4,7 @@ import 'package:techgate/Screens/Signup/components/social_icon.dart';
 import 'package:techgate/Screens/Login/login_screen.dart';
 import 'package:techgate/Screens/Signup/components/background.dart';
 import 'package:techgate/components/has_an_account.dart';
-import 'package:techgate/components/rounded_input_field.dart';
+import 'package:techgate/components/rounded_email_field.dart';
 import 'package:techgate/components/rounded_password_field.dart';
 import 'package:techgate/components/roundedbutton.dart';
 
@@ -31,7 +31,7 @@ class Body extends StatelessWidget {
               "assets/icons/signup.svg",
               height: size.height * 0.35,
             ),
-            RoundedInputField(hintText: "Your Email", onChanged: (value) {}),
+            RoundedEmailField(hintText: "Your Email", onChanged: (value) {}),
             RoundedPasswordField(onChanged: (value) {}),
             RoundedButton(text: "SIGNUP", press: () {}),
             SizedBox(
