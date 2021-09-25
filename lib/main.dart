@@ -19,6 +19,7 @@ class _MyAppState extends State<MyApp> {
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   @override
   Widget build(BuildContext context) {
+    return FutureBuilder(
       future: _initialization,
       builder: (context, snapshot) {
         return MaterialApp(
