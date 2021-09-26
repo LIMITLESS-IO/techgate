@@ -3,6 +3,7 @@ import 'package:techgate/components/text_field_container.dart';
 import 'package:techgate/constants.dart';
 
 class RoundedEmailField extends StatelessWidget {
+  final TextEditingController emailcontroller;
   final String hintText;
   final IconData icon;
   final ValueChanged<String> onChanged;
@@ -11,12 +12,14 @@ class RoundedEmailField extends StatelessWidget {
     required this.hintText,
     this.icon = Icons.person,
     required this.onChanged,
+    required this.emailcontroller,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
       child: TextField(
+        controller: emailcontroller,
         onChanged: onChanged,
         decoration: InputDecoration(
           icon: Icon(

@@ -5,6 +5,7 @@ import 'package:techgate/constants.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   runApp(MyApp());
 }
 

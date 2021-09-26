@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:techgate/Screens/Signup/components/social_icon.dart';
 import 'package:techgate/Screens/Login/login_screen.dart';
 import 'package:techgate/Screens/Signup/components/background.dart';
+import 'package:techgate/components/auth_service.dart';
 import 'package:techgate/components/has_an_account.dart';
 import 'package:techgate/components/rounded_email_field.dart';
 import 'package:techgate/components/rounded_password_field.dart';
@@ -17,6 +19,8 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController emailcontroller = TextEditingController();
+    TextEditingController passwdcontroller = TextEditingController();
     Size size = MediaQuery.of(context).size;
 
     return Background(
@@ -31,9 +35,22 @@ class Body extends StatelessWidget {
               "assets/icons/signup.svg",
               height: size.height * 0.35,
             ),
-            RoundedEmailField(hintText: "Your Email", onChanged: (value) {}),
-            RoundedPasswordField(onChanged: (value) {}),
-            RoundedButton(text: "SIGNUP", press: () {}),
+            RoundedEmailField(
+              hintText: "Your Email",
+              onChanged: (value) {},
+              emailcontroller: emailcontroller,
+            ),
+            RoundedPasswordField(
+              onChanged: (value) {},
+              passwdcontroller: passwdcontroller,
+            ),
+            RoundedButton(
+                text: "SIGNUP",
+                press: () {
+                  AuthService(FirebaseAuth.instance).signUp(
+                      email: emailcontroller.text,
+                      passwd: passwdcontroller.text);
+                }),
             SizedBox(
               height: 20,
             ),
