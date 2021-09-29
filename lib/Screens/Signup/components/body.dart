@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:techgate/components/social_icon.dart';
+import 'package:techgate/Screens/SignUpInfo/signup_info.dart';
 import 'package:techgate/Screens/Login/login_screen.dart';
 import 'package:techgate/Screens/Signup/components/background.dart';
 import 'package:techgate/components/auth_service.dart';
 import 'package:techgate/components/has_an_account.dart';
-import 'package:techgate/components/rounded_email_field.dart';
+import 'package:techgate/components/rounded_input_field.dart';
 import 'package:techgate/components/rounded_password_field.dart';
 import 'package:techgate/components/roundedbutton.dart';
 
@@ -35,10 +35,11 @@ class Body extends StatelessWidget {
               "assets/icons/signup.svg",
               height: size.height * 0.35,
             ),
-            RoundedEmailField(
+            RoundedInputField(
               hintText: "Your Email",
               onChanged: (value) {},
-              emailcontroller: emailcontroller,
+              inputcontroller: emailcontroller,
+              icon: Icons.person,
             ),
             RoundedPasswordField(
               onChanged: (value) {},
@@ -50,6 +51,14 @@ class Body extends StatelessWidget {
                   AuthService(FirebaseAuth.instance).signUp(
                       email: emailcontroller.text,
                       passwd: passwdcontroller.text);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return SignUpInfo();
+                      },
+                    ),
+                  );
                 }),
             SizedBox(
               height: 20,
@@ -67,27 +76,6 @@ class Body extends StatelessWidget {
                 );
               },
             ),
-            SizedBox(
-              height: 20,
-            ),
-            OrDriver(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SocialIcon(
-                  IconSrc: "assets/icons/facebook.svg",
-                  press: () {},
-                ),
-                SocialIcon(
-                  IconSrc: "assets/icons/google-plus.svg",
-                  press: () {},
-                ),
-                SocialIcon(
-                  IconSrc: "assets/icons/twitter.svg",
-                  press: () {},
-                ),
-              ],
-            )
           ],
         ),
       ),
