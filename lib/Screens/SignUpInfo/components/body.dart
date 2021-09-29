@@ -13,6 +13,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController firstname = TextEditingController();
     TextEditingController surname = TextEditingController();
+    TextEditingController agecontroller = TextEditingController();
 
     Size size = MediaQuery.of(context).size;
 
@@ -38,7 +39,7 @@ class Body extends StatelessWidget {
             inputcontroller: firstname,
           ),
           SizedBox(
-            width: 20,
+            height: 20,
           ),
           RoundedInputField(
             icon: Icons.perm_identity,
@@ -46,6 +47,14 @@ class Body extends StatelessWidget {
             onChanged: (value) {},
             inputcontroller: surname,
           ),
+          SizedBox(
+            height: 20,
+          ),
+          RoundedInputField(
+              hintText: "Age",
+              icon: Icons.perm_identity,
+              onChanged: (value) {},
+              inputcontroller: agecontroller),
           SizedBox(
             height: 30,
           ),
