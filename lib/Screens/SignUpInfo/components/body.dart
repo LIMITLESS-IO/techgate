@@ -1,14 +1,23 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:techgate/Screens/SignUpInfo/components/background.dart';
+import 'package:techgate/Screens/Verify/verify.dart';
 import 'package:techgate/components/rounded_input_field.dart';
 import 'package:techgate/components/roundedbutton.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  final auth = FirebaseAuth.instance;
+  User? user;
   @override
   Widget build(BuildContext context) {
     TextEditingController firstname = TextEditingController();
@@ -48,17 +57,24 @@ class Body extends StatelessWidget {
             inputcontroller: surname,
           ),
           SizedBox(
-            height: 20,
-          ),
-          RoundedInputField(
-              hintText: "Age",
-              icon: Icons.perm_identity,
-              onChanged: (value) {},
-              inputcontroller: agecontroller),
-          SizedBox(
             height: 30,
           ),
-          RoundedButton(text: "Confirm", press: () {})
+          RoundedButton(
+              text: "Confirm",
+              press: () {
+                user = auth.currentUser;
+                setState(() {
+                  user!.updateDisplayName(firstname.text + " " + surname.text);
+                });
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return VerifyScreen();
+                    },
+                  ),
+                );
+              })
         ],
       ),
     );
